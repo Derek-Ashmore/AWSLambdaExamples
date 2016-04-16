@@ -14,26 +14,22 @@
 package org.force66.aws.email.collector;
 
 import org.apache.commons.lang3.exception.ContextedRuntimeException;
-import org.apache.log4j.Logger;
 import org.force66.aws.email.collector.model.EmailCollectionRequest;
 import org.force66.aws.email.collector.model.EmailCollectionResponse;
+import org.force66.aws.utils.ContextUtils;
 
 import com.amazonaws.services.lambda.runtime.Context;
 import com.amazonaws.services.lambda.runtime.RequestHandler;
 
 public class EmailCollectorLambda implements RequestHandler<EmailCollectionRequest, EmailCollectionResponse> {
-	private static final Logger LOGGER = Logger.getLogger(EmailCollectorLambda.class);
 
 	@Override
 	public EmailCollectionResponse handleRequest(EmailCollectionRequest input, Context context) {
 		try {return new EmailCollector().collect(input);}
 		catch (Exception e) {
-			ContextedRuntimeException ce = new ContextedRuntimeException(e)
-					.addContextValue("firstName", input.getFirstName())
-					.addContextValue("lastName", input.getLastName())
-					.addContextValue("emailAddress", input.getEmailAddress());
-			LOGGER.error("Error in Lambda Email Collector", ce);
-			throw ce;
+			throw new ContextedRuntimeException(e)
+					.addContextValue("emailCollectionRequest", input)
+					.addContextValue("context", ContextUtils.toString(context));
 		}
 	}
 

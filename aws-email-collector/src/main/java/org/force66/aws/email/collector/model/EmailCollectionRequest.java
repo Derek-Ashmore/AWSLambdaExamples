@@ -13,7 +13,7 @@
  */
 package org.force66.aws.email.collector.model;
 
-public class EmailCollectionRequest {
+public class EmailCollectionRequest extends BaseType {
 
 	private String firstName;
 	private String lastName;

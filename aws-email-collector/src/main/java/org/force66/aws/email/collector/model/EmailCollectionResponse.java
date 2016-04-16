@@ -13,7 +13,7 @@
  */
 package org.force66.aws.email.collector.model;
 
-public class EmailCollectionResponse {
+public class EmailCollectionResponse extends BaseType {
 
 	private boolean isSuccess;
 	private FieldInputError[] inputValidationError;

@@ -23,9 +23,10 @@ public class EmailCollector {
 	
 	public EmailCollectionResponse collect(EmailCollectionRequest emailCollectionRequest) {
 		Validate.notNull(emailCollectionRequest, "Null emailCollectionRequest not allowed.");
-		log.info("email collection request: email=" +emailCollectionRequest.getEmailAddress());
+		log.info("email collection request=" + emailCollectionRequest);
 		
 		return new EmailCollectionResponse(true);
+
 	}
 
 

@@ -13,7 +13,7 @@
  */
 package org.force66.aws.email.collector.model;
 
-public class FieldInputError {
+public class FieldInputError extends BaseType {
 
 	private String fieldName;
 	private String errorText;
