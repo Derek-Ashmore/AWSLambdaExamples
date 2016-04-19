@@ -25,6 +25,8 @@ public class EmailCollector {
 		Validate.notNull(emailCollectionRequest, "Null emailCollectionRequest not allowed.");
 		log.info("email collection request=" + emailCollectionRequest);
 		
+		// TODO Put real recoring logic here
+		
 		return new EmailCollectionResponse(true);
 
 	}
