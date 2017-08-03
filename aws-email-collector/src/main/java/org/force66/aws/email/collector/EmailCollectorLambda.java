@@ -23,7 +23,6 @@ import com.amazonaws.services.lambda.runtime.RequestHandler;
 
 public class EmailCollectorLambda implements RequestHandler<EmailCollectionRequest, EmailCollectionResponse> {
 
-	@Override
 	public EmailCollectionResponse handleRequest(EmailCollectionRequest input, Context context) {
 		try {return new EmailCollector().collect(input);}
 		catch (Exception e) {
