@@ -23,18 +23,9 @@ public class ListS3Assets {
 	
 	private AmazonS3 s3 = null;
 	
-	public ListS3Assets() {
-		s3 = AmazonS3ClientBuilder.defaultClient();
-	}
-	
-	public ListS3Assets(String regionName) {
-		Validate.notEmpty(regionName, "Null or blank region name not allowed.");
-		Regions regions = Regions.fromName(regionName);
-		Validate.notNull(regions, "%s is not a valid region name", regionName);
-		
-		s3 = AmazonS3ClientBuilder.standard()
-				.withRegion(regions)
-				.build();
+	public ListS3Assets(AmazonS3 s3Client) {
+		Validate.notNull(s3Client, "Null AmazonS3 s3Client not allowed");
+		s3 = s3Client;
 	}
 	
 	public void list(OutputStream outStream) {
