@@ -9,5 +9,6 @@
   <modules>
   	<module>aws-commons</module>
   	<module>aws-email-collector</module>
+  	<module>aws-sdk-mock-examples</module>
   </modules>
 </project>
