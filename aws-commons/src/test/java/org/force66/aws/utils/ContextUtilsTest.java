@@ -23,7 +23,7 @@ import com.amazonaws.services.lambda.runtime.LambdaLogger;
 
 public class ContextUtilsTest {
 
-	private static final String TEST_AWS_REQUEST_ID = "myAwsRequestId";
+	private static final String TEST_AWS_REQUEST_ID = "myAwsRequestId"; 
 
 	@Test
 	public void test() throws Exception {

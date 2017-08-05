@@ -28,7 +28,7 @@ public class JSonSchemaGenerator {
 	public static void main(String[] args) throws Exception {
 		Validate.isTrue(args != null && args.length >= 2, "Usage arguments: className fileTarget");
 		
-		String className = args[0];
+		String className = args[0]; 
 		String outputFileName = args[1];
 		
 		HyperSchemaFactoryWrapper schemaVisitor = new HyperSchemaFactoryWrapper();

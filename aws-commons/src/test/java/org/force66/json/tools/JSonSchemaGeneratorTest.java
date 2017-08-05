@@ -20,7 +20,7 @@ import org.junit.Assert;
 import org.junit.Test;
 
 public class JSonSchemaGeneratorTest {
-
+ 
 	@Test
 	public void test() throws Exception {
 		File tempFile = File.createTempFile("json", ".json");

@@ -44,7 +44,7 @@
 			<version>2.8.47</version>
 		</dependency>
 	</dependencies>
-
+	
 	<build>
 		<plugins>
 			<plugin>
@@ -52,8 +52,6 @@
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>3.6.1</version>
 				<configuration>
-					<skipMain>true</skipMain>
-					<skip>true</skip>
 					<source>${java.version}</source>
 					<target>${java.version}</target>
 				</configuration>
@@ -83,10 +81,8 @@
 							<goal>report</goal>
 						</goals>
 						<configuration>
-							<!-- Sets the path to the file which contains the execution data. -->
 
 							<dataFile>target/jacoco.exec</dataFile>
-							<!-- Sets the output directory for the code coverage report. -->
 							<outputDirectory>target/jacoco-ut</outputDirectory>
 						</configuration>
 					</execution>
@@ -97,7 +93,30 @@
 					</systemPropertyVariables>
 				</configuration>
 			</plugin>
+			<plugin>
+				<groupId>org.pitest</groupId>
+				<artifactId>pitest-maven</artifactId>
+				<version>1.2.2</version>
+				<configuration>
+					<targetClasses>
+						<param>org.force66.*</param>
+					</targetClasses>
+					<targetTests>
+						<param>org.force66.*</param>
+					</targetTests>
+				</configuration>
+				<executions>
+					<execution>
+						<id>report-coverage</id>
+						<phase>test</phase>
+						<goals>
+							<goal>mutationCoverage</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
 		</plugins>
 	</build>
+
 	<artifactId>aws-sdk-mock-examples</artifactId>
 </project>

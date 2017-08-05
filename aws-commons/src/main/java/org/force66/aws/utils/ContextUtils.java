@@ -19,7 +19,7 @@ import com.amazonaws.services.lambda.runtime.Context;
 
 /**
  * Generic utilities for handling AWS Context
- * @author Derek C. Ashmore
+ * @author Derek C. Ashmore 
  *
  */
 public class ContextUtils {

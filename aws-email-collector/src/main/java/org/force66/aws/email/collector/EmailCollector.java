@@ -14,18 +14,19 @@
 package org.force66.aws.email.collector;
 
 import org.apache.commons.lang3.Validate;
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.force66.aws.email.collector.model.EmailCollectionRequest;
 import org.force66.aws.email.collector.model.EmailCollectionResponse;
 
 public class EmailCollector {
-	static final Logger log = Logger.getLogger(EmailCollector.class);
+	static final Logger log = LoggerFactory.getLogger(EmailCollector.class);
 	
 	public EmailCollectionResponse collect(EmailCollectionRequest emailCollectionRequest) {
 		Validate.notNull(emailCollectionRequest, "Null emailCollectionRequest not allowed.");
 		log.info("email collection request=" + emailCollectionRequest);
 		
-		// TODO Put real recoring logic here
+		// TODO Put real email collection logic here
 		
 		return new EmailCollectionResponse(true);
 

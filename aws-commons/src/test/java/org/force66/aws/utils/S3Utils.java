@@ -13,7 +13,7 @@
  */
 package org.force66.aws.utils;
 
-import java.io.IOException;
+import java.io.IOException; 
 import java.util.Properties;
 
 import com.amazonaws.auth.profile.ProfileCredentialsProvider;
